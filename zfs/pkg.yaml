@@ -18,7 +18,7 @@ steps:
         ./configure --with-config=kernel --with-linux=/src
     build:
       - |
-        make -j $(nproc)
+        make -j 8
     install:
       - |
         mkdir -p /rootfs/lib/modules/$(cat /src/include/config/kernel.release)/
@@ -26,7 +26,7 @@ steps:
         cp /src/modules.builtin /rootfs/lib/modules/$(cat /src/include/config/kernel.release)/
         cp /src/modules.builtin.modinfo /rootfs/lib/modules/$(cat /src/include/config/kernel.release)/
 
-        make -j $(nproc) -C /src M="$(pwd)/module" modules_install DESTDIR=/rootfs INSTALL_MOD_PATH=/rootfs INSTALL_MOD_DIR=extras INSTALL_MOD_STRIP=1 CONFIG_MODULE_SIG_ALL=y
+        make -j 8 -C /src M="$(pwd)/module" modules_install DESTDIR=/rootfs INSTALL_MOD_PATH=/rootfs INSTALL_MOD_DIR=extras INSTALL_MOD_STRIP=1 CONFIG_MODULE_SIG_ALL=y
     test:
       - |
         # https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html#signed-modules-and-stripping

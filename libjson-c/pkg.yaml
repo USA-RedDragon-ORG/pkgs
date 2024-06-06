@@ -22,7 +22,7 @@ steps:
          .
     build:
       - |
-        make -C build -j $(nproc)
+        make -C build -j 8
     install:
       - |
         make -C build DESTDIR=/rootfs install

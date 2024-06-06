@@ -22,7 +22,7 @@ steps:
             --prefix=/usr
     build:
       - |
-        make -j $(nproc)
+        make -j 8
     install:
       - |
         make install DESTDIR=/rootfs

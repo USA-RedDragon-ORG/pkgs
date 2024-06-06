@@ -28,7 +28,7 @@ steps:
         --enable-gettext=no
     build:
       - |
-        make -j $(nproc) DEBUG=-DNDEBUG
+        make -j 8 DEBUG=-DNDEBUG
     install:
       - |
         make install DESTDIR=/rootfs

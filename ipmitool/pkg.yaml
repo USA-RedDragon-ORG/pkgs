@@ -49,7 +49,7 @@ steps:
     build:
       - |
         cd build
-        make -j $(nproc)
+        make -j 8
     install:
       - |
         cd build

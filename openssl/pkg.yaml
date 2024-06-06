@@ -38,7 +38,7 @@ steps:
           no-seed \
           no-weak-ssl-ciphers
 
-        make -j $(nproc) build_sw
+        make -j 8 build_sw
     install:
       - |
         cd openssl

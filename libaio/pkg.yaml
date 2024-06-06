@@ -14,7 +14,7 @@ steps:
         tar -xzf libaio.tar.gz --strip-components=1
     build:
       - |
-        make -j $(nproc)
+        make -j 8
     install:
       - |
         make DESTDIR=/rootfs install

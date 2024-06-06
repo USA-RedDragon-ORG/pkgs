@@ -35,7 +35,7 @@ steps:
         esac
 
         export KERNELRELEASE=$(cat include/config/kernel.release)
-        make -j $(nproc) modules_install DEPMOD=/toolchain/bin/depmod INSTALL_MOD_PATH=/rootfs INSTALL_MOD_STRIP=1
+        make -j 8 modules_install DEPMOD=/toolchain/bin/depmod INSTALL_MOD_PATH=/rootfs INSTALL_MOD_STRIP=1
         depmod -b /rootfs $KERNELRELEASE
         unlink /rootfs/lib/modules/$KERNELRELEASE/build
 finalize:

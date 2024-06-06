@@ -53,7 +53,7 @@ steps:
                     --disable-nls \
                     --disable-werror
 
-          make -j $(nproc)
+          make -j 8
 
           make install-strip DESTDIR=/rootfs
 

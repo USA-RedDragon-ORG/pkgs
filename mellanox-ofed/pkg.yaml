@@ -30,9 +30,9 @@ steps:
           --with-srp-mod \
           --with-iser-mod \
           --kernel-sources=/src \
-          -j $(nproc)
+          -j 8
 
-        make kernel -j $(nproc)
+        make kernel -j 8
     install:
       - |
         cd SOURCES/mlnx-ofed-kernel-5.9

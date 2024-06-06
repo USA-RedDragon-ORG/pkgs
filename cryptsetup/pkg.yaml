@@ -28,7 +28,7 @@ steps:
           --enable-static-cryptsetup || (cat config.log; exit 1)
     build:
       - |
-        make -j $(nproc)
+        make -j 8
     install:
       - |
         make install DESTDIR=/rootfs
